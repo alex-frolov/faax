@@ -5,8 +5,11 @@
  * default values from $_POST/$_GET/$_REQUEST/$_SERVER
  * but if you write self app for unit tests you can set up these variables directly.
  *
- * @project FAAX
- * @author  Alexander Frolov <alex.frolov@gmail.com>
+ * @project    FAAX
+ * @category   Core
+ * @package    Request
+ * @copyright  Copyright (c) 2015 Aleksander Frolov. (http://www.frolov.guru)
+ * @author     Alexander Frolov <alex.frolov@gmail.com>
  */
 namespace App\Core;
 

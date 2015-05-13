@@ -18,6 +18,6 @@ defined('APPLICATION_PATH') || define('APPLICATION_PATH', realpath(dirname(__FIL
 set_include_path(implode(PATH_SEPARATOR, array(realpath(APPLICATION_PATH . '/../App'), get_include_path())));
 
 // run application
-require_once APPLICATION_PATH . '/App.php';
-$app = new \App\App (APPLICATION_PATH . '/Configs/config.php');
+require_once APPLICATION_PATH . '/Core/App.php';
+$app = new \App\Core\App (APPLICATION_PATH . '/Configs/config.php');
 $app->run($_REQUEST, $_POST, $_GET, $_SERVER);

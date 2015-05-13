@@ -3,7 +3,11 @@
  * Class Test
  * test model only.
  *
- * @author Alexander Frolov <alex.frolov@gmail.com>
+ * @project    FAAX
+ * @category   Models
+ * @package    Test
+ * @copyright  Copyright (c) 2015 Aleksander Frolov. (http://www.frolov.guru)
+ * @author     Alexander Frolov <alex.frolov@gmail.com>
  */
 class Test {
 

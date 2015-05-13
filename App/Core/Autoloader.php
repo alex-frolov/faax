@@ -4,15 +4,54 @@
  * default path to \App\Models
  * But you can say full name of class with namespaces like \App\Controllers\IndexController
  *
- * @project FAAX
- * @author  Alexander Frolov <alex.frolov@gmail.com>
+ * @project    FAAX
+ * @category   Core
+ * @package    Autoloader
+ * @copyright  Copyright (c) 2015 Aleksander Frolov. (http://www.frolov.guru)
+ * @author     Aleksander Frolov <alex.frolov@gmail.com>
  */
 namespace App\Core;
 
 class Autoloader
 {
-    public function __construct()
+    /**
+     * @var Singleton instance
+     */
+    protected static $_instance;
+
+    /**
+     * Constructor
+     *
+     * Registers instance with spl_autoload stack
+     *
+     * @return void
+     */
+    protected function __construct()
     {
+        \spl_autoload_register(array(__CLASS__, 'autoload'));
+    }
+
+    /**
+     * Retrieve singleton instance
+     *
+     * @return Autoloader
+     */
+    public static function getInstance()
+    {
+        if (null === self::$_instance) {
+            self::$_instance = new self();
+        }
+        return self::$_instance;
+    }
+
+    /**
+     * Reset the singleton instance
+     *
+     * @return void
+     */
+    public static function resetInstance()
+    {
+        self::$_instance = null;
     }
 
     public static function autoload($file)
@@ -60,5 +99,3 @@ class Autoloader
         }
     }
 }
-
-\spl_autoload_register('App\Core\Autoloader::autoload');

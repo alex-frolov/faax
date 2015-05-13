@@ -3,8 +3,11 @@
  * Config
  * processing config data
  *
- * @project FAAX
- * @author  Alexander Frolov <alex.frolov@gmail.com>
+ * @project    FAAX
+ * @category   Core
+ * @package    Config
+ * @copyright  Copyright (c) 2015 Aleksander Frolov. (http://www.frolov.guru)
+ * @author     Alexander Frolov <alex.frolov@gmail.com>
  */
 namespace App\Core;
 
@@ -35,5 +38,30 @@ class Config
             echo $e->getMessage(), "\n";
             exit();
         }
+    }
+
+    /**
+     * Is an option present into config?
+     *
+     * @param  string $key
+     * @return bool
+     */
+    public function hasOption($key)
+    {
+        return array_key_exists($key, self::$config);
+    }
+
+    /**
+     * Retrieve a single option
+     *
+     * @param  string $key
+     * @return mixed
+     */
+    public function getOption($key)
+    {
+        if ($this->hasOption($key)) {
+            return self::$config[$key];
+        }
+        return null;
     }
 }

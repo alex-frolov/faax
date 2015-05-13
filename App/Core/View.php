@@ -5,12 +5,15 @@
  * It has not any template engine like smarty/twig...
  * Only raw render.
  *
- * @project FAAX
- * @author  Alexander Frolov <alex.frolov@gmail.com>
+ * @project    FAAX
+ * @category   Core
+ * @package    View
+ * @copyright  Copyright (c) 2015 Aleksander Frolov. (http://www.frolov.guru)
+ * @author     Alexander Frolov <alex.frolov@gmail.com>
  */
 namespace App\Core;
 
-class View
+class View extends \App\Core\Instance
 {
     public function render($params, $controller, $action)
     {

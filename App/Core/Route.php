@@ -5,8 +5,11 @@
  * If it doesn't fount any controller & action^ then return error controller and action
  * Also if URI is /, so it returns default controller and action
  *
- * @project FAAX
- * @author  Alexander Frolov <alex.frolov@gmail.com>
+ * @project    FAAX
+ * @category   Core
+ * @package    Route
+ * @copyright  Copyright (c) 2015 Aleksander Frolov. (http://www.frolov.guru)
+ * @author     Alexander Frolov <alex.frolov@gmail.com>
  */
 namespace App\Core;
 
